@@ -1,5 +1,5 @@
 module.exports ={
-    "entry": "./app/app.ts",
+    "entry": "./js/app.js",
     devtool: "inline-source-map",
     resolve: {
         extensions: [ '.tsx', '.ts', '.js' ]
