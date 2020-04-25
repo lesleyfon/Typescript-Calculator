@@ -94,7 +94,7 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar dashBoard_1 = __webpack_require__(/*! ./dashBoard */ \"./app/dashBoard.ts\");\nvar dashBoard = new dashBoard_1.DashBoard();\nvar numbers = document.getElementById(\"numbers\");\nvar sign = document.getElementById('signs');\nnumbers.addEventListener(\"click\", function (event) {\n    dashBoard.captureClickedElement(event.target);\n});\nsign.addEventListener(\"click\", function (event) {\n    dashBoard.captureClickedElement(event.target);\n});\n\n\n//# sourceURL=webpack:///./app/app.ts?");
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar dashBoard_1 = __webpack_require__(/*! ./dashBoard */ \"./app/dashBoard.ts\");\nvar dashBoard = new dashBoard_1.DashBoard();\nvar numbers = document.getElementById(\"numbers\");\nvar sign = document.getElementById('signs');\nnumbers.addEventListener(\"click\", function (event) {\n    dashBoard.captureNumber(event.target);\n});\nsign.addEventListener(\"click\", function (event) {\n    dashBoard.captureSign(event.target);\n});\n\n\n//# sourceURL=webpack:///./app/app.ts?");
 
 /***/ }),
 
@@ -106,7 +106,7 @@ eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar da
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar DashBoard = /** @class */ (function () {\n    function DashBoard() {\n        this.inputValue = '';\n        this.displayResult = '';\n        this.inputField = document.querySelector('input');\n    }\n    DashBoard.prototype.captureClickedElement = function (elem) {\n        this.inputValue = elem.innerText;\n        this.inputField.value += this.inputValue;\n    };\n    return DashBoard;\n}());\nexports.DashBoard = DashBoard;\n\n\n//# sourceURL=webpack:///./app/dashBoard.ts?");
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar DashBoard = /** @class */ (function () {\n    function DashBoard() {\n        this.inputValue = '';\n        this.displayResult = '';\n        this.inputField = document.querySelector('input');\n    }\n    DashBoard.prototype.captureNumber = function (elem) {\n        this.inputValue = elem.innerText;\n        this.inputField.value += this.inputValue;\n    };\n    DashBoard.prototype.captureSign = function (elem) {\n        var firstEntry = this.inputField.value;\n        console.log(firstEntry);\n        this.inputField.value = elem.innerText;\n    };\n    return DashBoard;\n}());\nexports.DashBoard = DashBoard;\n\n\n//# sourceURL=webpack:///./app/dashBoard.ts?");
 
 /***/ })
 

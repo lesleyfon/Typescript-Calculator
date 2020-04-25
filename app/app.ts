@@ -9,8 +9,8 @@ const sign: HTMLElement  = <HTMLElement>document.getElementById('signs');
 
 
 numbers.addEventListener("click", event =>{
-    dashBoard.captureClickedElement(<HTMLElement>event.target)
+    dashBoard.captureNumber(<HTMLElement>event.target)
 })
 sign.addEventListener("click", event =>{
-    dashBoard.captureClickedElement(<HTMLElement>event.target)
+    dashBoard.captureSign(<HTMLElement>event.target)
 })
