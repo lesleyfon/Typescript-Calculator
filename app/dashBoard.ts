@@ -1,18 +1,25 @@
 export class DashBoard {
-    inputValue: string = ''
     displayResult: string = ''
-    inputField:HTMLInputElement = <HTMLInputElement> document.querySelector('input');
+    totalInputValues: object = {}
+    inputField: HTMLInputElement = <HTMLInputElement>document.querySelector('input');
 
-    captureNumber(elem:HTMLElement){
-        this.inputValue = elem.innerText;
-        this.inputField.value += this.inputValue
+    captureNumber(elem: HTMLElement) {
+        if (["*", "/", "+", "-"].includes(this.inputField.value)) {
+            this.totalInputValues = {
+                ...this.totalInputValues,
+                [this.inputField.value]: this.inputField.value
+            }
+            this.inputField.value = ''
+        }
+        this.inputField.value += elem.innerText;
     }
 
-    captureSign(elem:HTMLElement) {
-        let firstEntry: string = this.inputField.value;
-        console.log(firstEntry)
+    captureSign(elem: HTMLElement) {
+        this.totalInputValues = {
+            ...this.totalInputValues,
+            [this.inputField.value]: this.inputField.value
+        }
+        console.log(this.totalInputValues)
         this.inputField.value = elem.innerText;
-       
-
     }
 }
