@@ -1,0 +1,12 @@
+.container{
+    width: 70%;
+    margin: 0 auto;
+    background-color: #1F344C;
+    height: 80vh;
+}
+
+.container .calculator{
+    height: 30%;
+    background: #ffffff;
+    border: 1px solid #1F344C;
+}
