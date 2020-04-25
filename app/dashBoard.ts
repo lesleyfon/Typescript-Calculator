@@ -28,6 +28,7 @@ export class DashBoard {
         if (elem.innerText === "=") {
             this.total = this.calculateTotal(this.totalInputValues);
             this.inputField.value = ''
+
             this.displayField.innerText = String(this.total)
             return ''
         }
