@@ -29,8 +29,7 @@ export class DashBoard {
             this.total = this.calculateTotal(this.totalInputValues);
             this.inputField.value = ''
 
-            this.displayField.innerText = String(this.total)
-            return ''
+            this.displayField.innerText = String(this.total);
         }
 
         this.inputField.value = elem.innerText;

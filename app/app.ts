@@ -3,14 +3,18 @@ import {DashBoard} from "./dashBoard"
 let dashBoard = new DashBoard();
 
 
-const numbers: HTMLElement  = <HTMLElement>document.getElementById("numbers");
+const numbers: NodeList  = <NodeList>document.querySelectorAll("[data-number]");
 
-const sign: HTMLElement  = <HTMLElement>document.getElementById('signs');
+const operand: NodeList  = <NodeList>document.querySelectorAll("[data-operand]");
 
-
-numbers.addEventListener("click", event =>{
-    dashBoard.captureNumber(<HTMLElement>event.target)
+numbers.forEach(number => {
+    number.addEventListener("click", (e) => {
+        dashBoard.captureNumber(<HTMLElement>e.target)
+    });
 })
-sign.addEventListener("click", event =>{
-    dashBoard.captureSign(<HTMLElement>event.target)
-})
+
+operand.forEach(element => {
+    element.addEventListener("click", event =>{
+        dashBoard.captureSign(<HTMLElement>event.target)
+    })
+});
