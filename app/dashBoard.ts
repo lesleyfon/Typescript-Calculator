@@ -8,6 +8,7 @@ export class DashBoard {
     captureNumber(elem: HTMLElement) {
 
         if (["*", "/", "+", "-"].includes(this.inputField.value)) {
+            console.log(this.totalInputValues)
             this.totalInputValues = {
                 ...this.totalInputValues,
                 [this.inputField.value + String(Object.keys(this.totalInputValues).length)]: this.inputField.value
@@ -28,8 +29,11 @@ export class DashBoard {
         if (elem.innerText === "=") {
             this.total = this.calculateTotal(this.totalInputValues);
             this.inputField.value = ''
-
             this.displayField.innerText = String(this.total);
+            this.totalInputValues = {
+                [this.total + 'obj'] : String(this.total)
+            }
+            return 
         }
 
         this.inputField.value = elem.innerText;
