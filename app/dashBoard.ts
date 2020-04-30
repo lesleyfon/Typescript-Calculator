@@ -8,7 +8,7 @@ export class DashBoard {
     captureNumber(elem: HTMLElement) {
 
         if (["*", "/", "+", "-"].includes(this.inputField.value)) {
-            console.log(this.totalInputValues)
+            console.log(this.inputField.value)
             this.totalInputValues = {
                 ...this.totalInputValues,
                 [this.inputField.value + String(Object.keys(this.totalInputValues).length)]: this.inputField.value
@@ -16,6 +16,7 @@ export class DashBoard {
           
             this.inputField.value = ''
         }
+
         this.inputField.value += elem.innerText;
     }
 
@@ -42,10 +43,7 @@ export class DashBoard {
     calculateTotal(operationObj: object): number {
         let arr: string[] = Object.values(operationObj);
 
-
-
         for (let i = 0; i < arr.length; i++) {
-
             if (["*", "/", "+", "-"].includes(arr[i])) {
                 //is the current number is a sign we call the operation method that accept current number, the next number after the sign and the sign
                 this.total = this.operation(this.total, parseFloat(arr[i + 1]), arr[i]);
